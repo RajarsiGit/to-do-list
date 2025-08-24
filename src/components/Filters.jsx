@@ -34,22 +34,26 @@ export default function Filters({
       </div>
 
       {/* Right side: search + actions */}
-      <div className="flex items-center gap-2 flex-wrap">
+      <div className="flex items-center gap-2 w-full">
         <input
           placeholder="Search tasks… (Ctrl/Cmd + K)"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="w-56 rounded-xl border border-zinc-300 bg-white px-3 py-2 outline-none focus:ring-2 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
+          className="flex-auto md:w-96 rounded-xl border border-zinc-300 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
         />
-        <button className="btn-ghost" onClick={clearCompleted}>
-          Clear Completed
-        </button>
-        <button className="btn-ghost" onClick={onImport}>
-          Import JSON
-        </button>
-        <button className="btn-ghost" onClick={onExport}>
-          Export JSON
-        </button>
+
+        {/* ⬇️ This wrapper is the key */}
+        <div className="ml-auto flex items-center gap-2">
+          <button className="btn-ghost" onClick={clearCompleted}>
+            Clear Completed
+          </button>
+          <button className="btn-ghost" onClick={onImport}>
+            Import JSON
+          </button>
+          <button className="btn-ghost" onClick={onExport}>
+            Export JSON
+          </button>
+        </div>
       </div>
     </div>
   );
