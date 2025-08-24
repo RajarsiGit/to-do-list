@@ -3,7 +3,6 @@ import TodoInput from "./components/TodoInput.jsx";
 import TodoList from "./components/TodoList.jsx";
 import Filters from "./components/Filters.jsx";
 import Stats from "./components/Stats.jsx";
-import ImportExport from "./components/ImportExport.jsx";
 import { useLocalStorage } from "./hooks/useLocalStorage.js";
 
 function uid() {

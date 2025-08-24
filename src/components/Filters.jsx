@@ -10,7 +10,7 @@ export default function Filters({
   onExport,
 }) {
   return (
-    <div className="card flex flex-col gap-3 md:flex-row md:items-center md:justify-between flex-wrap">
+    <div className="card flex flex-col w-full gap-3 md:flex-row md:items-center md:justify-between flex-wrap">
       {/* Left side: filter buttons */}
       <div className="flex items-center gap-2">
         <button
@@ -33,20 +33,21 @@ export default function Filters({
         </button>
       </div>
 
-      {/* Right side: search + actions */}
       <div className="flex items-center gap-2 w-full">
         <input
           placeholder="Search tasks… (Ctrl/Cmd + K)"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          className="flex-auto md:w-96 rounded-xl border border-zinc-300 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
+          className="flex-auto md:w-full rounded-xl border border-zinc-300 bg-white px-4 py-3 outline-none focus:ring-2 focus:ring-zinc-400 dark:border-zinc-700 dark:bg-zinc-900"
         />
+      </div>
 
-        {/* ⬇️ This wrapper is the key */}
-        <div className="ml-auto flex items-center gap-2">
-          <button className="btn-ghost" onClick={clearCompleted}>
-            Clear Completed
-          </button>
+      {/* Right side: search + actions */}
+      <div className="w-full flex items-center justify-between gap-2">
+        <button className="btn-ghost" onClick={clearCompleted}>
+          Clear Completed
+        </button>
+        <div className="flex gap-2">
           <button className="btn-ghost" onClick={onImport}>
             Import JSON
           </button>
